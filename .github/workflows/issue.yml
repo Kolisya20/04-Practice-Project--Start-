@@ -1,0 +1,10 @@
+name: Listen Issue Event
+on:
+  issues:
+    types: [opened, edited]
+jobs:
+  log-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Issue Metadata
+        run: echo "${{ toJSON{github.event} }}"
