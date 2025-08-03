@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Save project artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact
         with:
           name: project
           path: .
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download project files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact
         with:
           name: project
       - name: Check lint
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download project files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact
         with:
           name: project
       - name: Run Tests
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download project files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact
         with:
           name: project
       - name: Build Project
