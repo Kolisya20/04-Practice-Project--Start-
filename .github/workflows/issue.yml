@@ -6,5 +6,7 @@ jobs:
   log-event:
     runs-on: ubuntu-latest
     steps:
-      - name: Output Issue Metadata
-        run: echo "${{ toJSON(github.event) }}"
+      - name: Output Issue Title
+        run: echo "${{ toJSON(github.event.issue.title) }}"
+      - name: Output Issue Author
+        run: echo "${{ toJSON(github.event.issue.login) }}"
