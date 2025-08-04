@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-      - name: actions/cache@v4
+        # caching used before instalation
+      - name: Cache dependencies
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -35,7 +37,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: actions/cache@v4
+      # caching used before instalation
+      - name: Cache dependencies
+        uses: actions/cache@v4
         with:
           path: ~/.npm
       - name: Install dependencies
