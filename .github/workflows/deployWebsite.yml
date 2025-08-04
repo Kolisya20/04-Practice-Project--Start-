@@ -9,7 +9,6 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
-        # caching used before instalation
       - name: actions/cache@v4
         with:
           path: ~/.npm
@@ -36,7 +35,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      # caching used before instalation
       - name: actions/cache@v4
         with:
           path: ~/.npm
