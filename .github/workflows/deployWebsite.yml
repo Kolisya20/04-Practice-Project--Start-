@@ -35,7 +35,7 @@ jobs:
         run: npm ci
       - name: Publish JS filename
         id: publish
-        run: find dist/assets/images/*.png -type f -execdir echo 'png-file-name={}' >> $GITHUB_OUTPUT ';'
+        run: find src/assets/images/*.png -type f -execdir echo 'png-file-name={}' >> $GITHUB_OUTPUT ';'
       - name: Build website
         run: npm run build
   deploy:
